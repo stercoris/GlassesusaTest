@@ -1,0 +1,22 @@
+{
+  "name": "GlassesusaTest",
+  "version": "1.0.0",
+  "description": "test test for test",
+  "main": "src/index.js",
+  "author": "dmitry",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config=jest.config.mjs"
+  },
+  "dependencies": {
+    "jest": "^26.6.3",
+    "mocha-steps": "^1.3.0",
+    "puppeteer": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
