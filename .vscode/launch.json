@@ -9,11 +9,10 @@
       "type": "node",
       "request": "launch",
       "runtimeArgs": [
-        "--experimental-vm-modules",
         "--inspect-brk",
         "${workspaceRoot}/node_modules/jest/bin/jest.js",
         "--runInBand",
-        "--config=jest.config.mjs"
+        "--config=jest.config.js"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",

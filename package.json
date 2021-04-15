@@ -6,13 +6,15 @@
   "author": "dmitry",
   "license": "MIT",
   "private": false,
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand --config=jest.config.mjs"
+    "test": "node node_modules/jest/bin/jest.js --runInBand --config=jest.config.js",
+    "testES6": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand --config=jest.config.mjs"
   },
   "dependencies": {
     "jest": "^26.6.3",
+    "mkdirp": "^1.0.4",
     "mocha-steps": "^1.3.0",
     "puppeteer": "^8.0.0"
   },

@@ -1,31 +1,10 @@
-import puppeteer from "puppeteer";
+const puppeteer = require("puppeteer");
 
 // https://github.com/mattphillips/jest-expect-message
 // https://www.npmjs.com/package/jest-cucumber
-
-const URL =
-  "https://www.glassesusa.com/shiny-blackblue-extra-large/oakley-oo9102-holbrook/46-000638.html";
-
-var browser;
-var page;
+var page = global.page;
 
 describe("Tests", () => {
-  beforeAll(async (done) => {
-    browser = await puppeteer.launch({ headless: false });
-    done();
-  }, 30000);
-
-  afterAll(async (done) => {
-    await page.screenshot({ path: "final.png", fullPage: true });
-    //await browser.close();
-    done();
-  });
-
-  test("Load Page", async () => {
-    page = await browser.newPage();
-    await page.goto(URL);
-  }, 10000);
-
   test("Find button", async () => {
     // Верхняя кнопка закрытия работает как часы, в то же время нижняя - как плохие часы.
     const SKIP_AD_BUTTON = ".btn-closeWelcome";

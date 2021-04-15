@@ -3,11 +3,14 @@
  * https://jestjs.io/docs/en/configuration.html
  */
 
-export default {
+module.exports = {
   clearMocks: true,
   transform: {},
   coverageDirectory: "coverage",
   coverageProvider: "v8",
   //preset: "jest-puppeteer",
   testEnvironment: "node",
+  globalSetup: "./src/context/setup.js",
+  globalTeardown: "./src/context/teardown.js",
+  testEnvironment: "./src/context/puppeteer_environment.js",
 };
