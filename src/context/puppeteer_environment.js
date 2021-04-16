@@ -26,6 +26,7 @@ class PuppeteerEnvironment extends NodeEnvironment {
     });
 
     const page = await this.global.browser.newPage();
+    await page._client.send("Emulation.clearDeviceMetricsOverride");
     await page.goto(Config.ENDPOINT_URL);
 
     this.global.page = page;

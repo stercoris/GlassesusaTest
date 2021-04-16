@@ -6,6 +6,7 @@
 module.exports = {
   clearMocks: true,
   transform: {},
+  testTimeout: 20000,
   coverageDirectory: "coverage",
   coverageProvider: "v8",
   //preset: "jest-puppeteer",

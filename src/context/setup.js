@@ -8,7 +8,10 @@ const Config = require("./Config");
 const DIR = path.join(Config.DIR, "jest_puppeteer_global_setup");
 
 module.exports = async function () {
-  const browser = await puppeteer.launch({ headless: Config.HEADLESS });
+  const browser = await puppeteer.launch({
+    headless: Config.HEADLESS,
+    args: ["--start-maximized"],
+  });
 
   // store the browser instance so we can teardown it later
   // this global is only available in the teardown but not in TestEnvironments
