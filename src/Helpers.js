@@ -1,7 +1,6 @@
-var page = global.page;
-
 // https://github.com/JedWatson/react-select/issues/856#issuecomment-215458457
 // https://stackoverflow.com/questions/59686300/how-to-get-text-from-xpath-in-puppeteer-node-js
+
 async function GetTextByXPath(xPath) {
   const element = (await page.$x(xPath))[0];
   return await page.evaluate((domEl) => domEl.innerText, element);
