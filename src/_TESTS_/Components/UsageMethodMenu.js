@@ -1,6 +1,4 @@
-var page = global.page;
-
-const Usages = {
+const Values = {
   NonPrescription: 1,
   SingleVision: 2,
   NearVision: 3,
@@ -10,12 +8,11 @@ const Usages = {
 
 const USAGE_BUTTON_CLASS = "usageItem__itemWrap___A_xb9";
 
-const GetUsageButton = (usage) =>
-  `//div[@class='${USAGE_BUTTON_CLASS}'][${usage}]`;
+const GetXPath = (usage) => `//div[@class='${USAGE_BUTTON_CLASS}'][${usage}]`;
 
-const ClickUsageBtn = async (usage) => {
-  const usageDiv = await page.$x(GetUsageButton(usage));
+const Set = async (usage) => {
+  const usageDiv = await page.$x(GetXPath(usage));
   await usageDiv[0].click();
 };
 
-module.exports = { Usages, ClickUsageBtn };
+module.exports = { Values, GetXPath, Set };

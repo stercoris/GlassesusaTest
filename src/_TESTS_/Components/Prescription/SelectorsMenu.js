@@ -1,4 +1,4 @@
-const Selectors = {
+const Values = {
   SphereRight: 1,
   SphereLeft: 4,
   CylinderRight: 2,
@@ -10,15 +10,15 @@ const Selectors = {
 
 const SELECT_CLASS = "prescriptionSelect__wrapSelect___2S1cx";
 
-const GetSelectXPath = (selectNum) =>
+const GetXPath = (selectNum) =>
   `(//div[@class='${SELECT_CLASS}']/select)[${selectNum}]`;
 
 const CloseDialogueBox = async () => {
   const box = await page.waitForXPath("//button[@class='rc-dialog-close']", {
     visible: true,
-    timeout: 2000,
+    timeout: 1000,
   });
   await box.click();
 };
 
-module.exports = { Selectors, GetSelectXPath, CloseDialogueBox };
+module.exports = { Values, GetXPath, CloseDialogueBox };

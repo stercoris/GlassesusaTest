@@ -1,4 +1,4 @@
-const LensTypes = {
+const Values = {
   Colorized: {
     Gray: 1,
     Brown: 2,
@@ -25,12 +25,16 @@ const LensTypes = {
 
 const COLOR_BTN_CLASS = "lensColorsSlider__image___3RUxi";
 
-const GetColorBtnXPath = (color) =>
+const GetXPath = (color) =>
   `(//div[contains(@class, '${COLOR_BTN_CLASS}')])[${color}]`;
 
-const PressColorButton = async (color) => {
-  const colorButton = (await page.$x(GetColorBtnXPath(color)))[0];
+const Set = async (color) => {
+  const colorButton = (await page.$x(GetXPath(color)))[0];
   await page.evaluate((domEl) => domEl.click(), colorButton);
 };
 
-module.exports = { LensTypes, GetColorBtnXPath, PressColorButton };
+module.exports = {
+  Values,
+  GetXPath,
+  Set,
+};
