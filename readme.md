@@ -2,15 +2,16 @@
 
 ### Packages:
 
-- [jest]
-- [puppeteer]
+- [jest] - Test library.
+- [puppeteer] - Web driver.
+- mkdirp - Enviroment setup helper.
 - Nothing more!
 
 #### Setup:
 
 ```sh
 $ git clone https://github.com/stercoris/GlassesusaTest
-$ cd glassesusa-test
+$ cd GlassesusaTest
 $ yarn install
 $ yarn run test
 ```
