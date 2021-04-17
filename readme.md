@@ -4,7 +4,7 @@
 
 - [jest] - Test library.
 - [puppeteer] - Web driver.
-- mkdirp - Enviroment setup helper.
+- mkdirp - Environment setup helper.
 - Nothing more!
 
 #### Setup:
